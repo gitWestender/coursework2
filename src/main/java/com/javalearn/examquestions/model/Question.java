@@ -1,5 +1,7 @@
 package com.javalearn.examquestions.model;
 
+import java.util.Objects;
+
 public class Question {
     private String question;
     private String answer;
@@ -20,17 +22,14 @@ public class Question {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Question question1)) return false;
-
-        if (!question.equals(question1.question)) return false;
-        return answer.equals(question1.answer);
+        if (o == null || getClass() != o.getClass()) return false;
+        Question question1 = (Question) o;
+        return Objects.equals(question, question1.question) && Objects.equals(answer, question1.answer);
     }
 
     @Override
     public int hashCode() {
-        int result = question.hashCode();
-        result = 31 * result + answer.hashCode();
-        return result;
+        return Objects.hash(question, answer);
     }
 
     @Override

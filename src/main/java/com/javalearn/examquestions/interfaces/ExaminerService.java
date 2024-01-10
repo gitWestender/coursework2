@@ -2,8 +2,8 @@ package com.javalearn.examquestions.interfaces;
 
 import com.javalearn.examquestions.model.Question;
 
-import java.util.Collection;
+import java.util.*;
 
 public interface ExaminerService {
-    Collection<Question> getQuestions(int amount);
+    Set<Question> getQuestions(int amount);
 }
